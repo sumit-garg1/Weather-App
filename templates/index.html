@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-bar">
+            <div class="nav-items">
+                <h2 style="margin-top: 25px;">Weather-App</h2>
+                <div id="form">
+                    <form action="{{ url_for('home') }}" method="post">
+                        <input type="text" name="city" id="search" placeholder="Find your location" required>
+                        <button type="submit">Find</button>
+                    </form>
+                </div>
+                <div id="links">
+                    <a href="/">Home</a>
+                    <a href="https://github.com/sumit-garg1/Weather-App">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="box">
+            <div id="bgimage">
+                <div class="forecast">
+                    <div class="current-forecast">
+                        <div class="city-name">
+                            <img src="{{ url_for('static', filename='images/location.png') }}" alt="" id="img">
+                            <h1 style="margin-top: 25px;">{{ weather.city if weather else 'N/A' }}</h1>
+                        </div>
+                        <h4 id="date_time">{{ weather.date_time if weather else 'N/A' }}</h4>
+                        <h2 class="icon">
+                            <img src="https://openweathermap.org/img/wn/{{ weather.icon if weather else '01d' }}@2x.png" alt="icon">
+                            <div class="desc">{{ weather.description if weather else 'N/A' }}</div>
+                        </h2>
+                    </div>
+                    <div class="current-temp">
+                        <div class="temp">{{ weather.temperature if weather else 'N/A' }}°C
+                            <div class="min-max">
+                                <div id="min">MIN: {{ weather.min_temperature if weather else 'N/A' }}°C</div>
+                                <div id="max">MAX: {{ weather.max_temperature if weather else 'N/A' }}°C</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="temp-details">
+                <div class="box2">
+                    <div class="grid-container" style="height: 280px">
+                        <div class="grid-item">
+                            Pressure
+                            <div class="img2"></div>
+                            <div class="pressure">{{ weather.pressure if weather else 'N/A' }}</div>
+                            <div>mmHg</div>
+                        </div>
+                        <div class="grid-item">
+                            Humidity
+                            <div class="img3"></div>
+                            <div class="pressure">{{ weather.humidity if weather else 'N/A' }}%</div>
+                        </div>
+                        <div class="grid-item">
+                            Wind Speed
+                            <div class="img4"></div>
+                            <div class="pressure">{{ weather.wind if weather else 'N/A' }} km/h</div>
+                        </div>
+                        <div class="grid-item">
+                            Wind Degree
+                            <div class="img5"></div>
+                            <div class="pressure">{{ weather.wind_deg if weather else 'N/A' }} deg</div>
+                        </div>
+                        <div class="grid-item">
+                            Wind Gust
+                            <div class="img6"></div>
+                            <div class="pressure">{{ weather.wind_gust if weather else 'N/A' }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Project By: Sumit Garg.</p>
+    </footer>
+</body>
+</html>
