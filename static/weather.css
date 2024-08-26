@@ -178,7 +178,7 @@ button{
 
  .box2{
     border: 0.5px solid rgb(58, 55, 55);
-    height: 240px;
+    height: 250px;
     width: 809px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -284,6 +284,9 @@ footer {
     display: none;
 }
 @media (max-width: 768px) {
+    body{
+        height: 100%;
+    }
     .nav-container {
       position: relative;
     }
@@ -395,7 +398,7 @@ footer {
 
     .box2 {
         width: 100%;
-        height: auto;
+        height: 416px;
     }
 
     .grid-container {
@@ -410,7 +413,7 @@ footer {
     }
 
     footer {
-        margin-top: rem;
+        margin-top: 37rem;
         font-size: 1rem;
     }
 }
