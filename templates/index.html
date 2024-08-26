@@ -18,9 +18,12 @@
                         <button type="submit">Find</button>
                     </form>
                 </div>
-                <div id="links">
-                    <a href="/">Home</a>
-                    <a href="https://github.com/sumit-garg1/Weather-App">Source Code</a>
+                <button class="toggle-button" onclick="toggleMenu()">☰</button>
+                <div class="menu">
+                    <div id="links">
+                        <a href="/">Home</a>
+                        <a href="https://github.com/sumit-garg1/Weather-App">Source Code</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,5 +90,11 @@
     <footer>
         <p>Project By: Sumit Garg.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
