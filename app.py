@@ -11,9 +11,13 @@ def home():
 
     if request.method == "POST":
         city = request.form.get("city")
-    
+
     url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid=0daa75c9a7c1cc4449022cfdcfbfad5b"
     r = requests.get(url.format(city)).json()
+
+    if r.get("cod") != 200:
+        error_message = "City not found. Please enter a valid city name."
+        return render_template("index.html", error=error_message)
 
     timestamp = r.get('dt', datetime.datetime.now().timestamp())
     date_time = datetime.datetime.utcfromtimestamp(timestamp).strftime('%B %d, %Y')
