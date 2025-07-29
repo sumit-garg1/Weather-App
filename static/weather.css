@@ -179,7 +179,7 @@ button{
  .box2{
     border: 0.5px solid rgb(58, 55, 55);
     height: 250px;
-    width: 809px;
+    width: 759px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
     background: linear-gradient(to right, #a83279, #d38312);
@@ -187,16 +187,17 @@ button{
 .grid-container {
     /* border: 1px solid red; */
     display: grid;
-    margin-left: 15px;
+    margin-left: 10px;
     /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    column-gap: 20px;
+    column-gap: 10px;
     row-gap: 25px;
-    /* border-radius: 15px; */
+    border-radius: 15px;
     /* justify-content: center;
     align-content: center;  */
     grid-template-columns: 140px 140px 140px 140px 140px;
     grid-template-rows: 200px 200px 200px 200px 200px;
     margin-top: 20px;
+    /* margin-right: 10px; */
     overflow: hidden;
     
   }
